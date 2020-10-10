@@ -1,0 +1,10 @@
+FROM python:3.6.4-slim-jessie
+RUN pip install --upgrade pip
+RUN pip3 install jupyterlab kaggle pandas scikit-learn  xgboost 
+RUN adduser --disabled-password jupyter
+
+USER jupyter
+WORKDIR /home/jupyter
+
+EXPOSE 8888
+CMD ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888"]
