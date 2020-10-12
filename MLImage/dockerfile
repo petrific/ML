@@ -1,6 +1,7 @@
 FROM python:3.6.4-slim-jessie
 RUN pip install --upgrade pip
-RUN pip3 install jupyterlab kaggle pandas scikit-learn  xgboost matplotlib 
+RUN pip3 install jupyterlab kaggle pandas scikit-learn  xgboost matplotlib
+RUN pip3 install mglearn
 RUN adduser --disabled-password jupyter
 
 USER jupyter
